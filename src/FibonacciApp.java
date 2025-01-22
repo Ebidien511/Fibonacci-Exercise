@@ -33,7 +33,9 @@ public class FibonacciApp {
 
     //RECURSIVE FIBONACCI
     public static int recursiveFibonacci(int index){
-        if(index<=1)return index;
+        if(index<=1) {
+            return index;
+        }
 
         return recursiveFibonacci(index-2) + recursiveFibonacci(index-1);
     }
@@ -45,12 +47,4 @@ public class FibonacciApp {
         }
         return sequence;
     }
-
-
-
-
-    
-
-
-
 }

@@ -117,6 +117,25 @@ class FibonacciAppTest {
 
     //RECURSIVE FIBONACCI
 
+    @Test
+    void generateForCountOfEight() {
+        //given
+        int count=8;
+        //when
+        ArrayList<Integer> result = fibonacciApp.generateRecursiveFibonacciSequence(count);
+        ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(0,1,1,2,3,5,8,13));
+        //then
+        assertEquals(expected,result);
+    }
 
-
+    @Test
+    void generateForCountOfFive() {
+        //given
+        int count=5;
+        //when
+        ArrayList<Integer> result = fibonacciApp.generateRecursiveFibonacciSequence(count);
+        ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(0,1,1,2,3));
+        //then
+        assertEquals(expected,result);
+    }
 }
