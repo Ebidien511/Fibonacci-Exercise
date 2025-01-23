@@ -86,7 +86,7 @@ class FibonacciAppTest {
         //given
         int startValue = 1;
         int count=-1;
-        //when
+        //then
         assertThrows(IllegalArgumentException.class,()->{
             fibonacciApp.generateFibonacciSequence(count, startValue);
         });
@@ -97,7 +97,7 @@ class FibonacciAppTest {
         //given
         int startValue = 1;
         int count=2;
-        //when
+        //then
         assertThrows(IllegalArgumentException.class,()->{
             FibonacciApp.generateFibonacciSequence(count, startValue);
         });
