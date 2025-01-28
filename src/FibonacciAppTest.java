@@ -1,61 +1,55 @@
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class FibonacciAppTest {
 
-    FibonacciApp fibonacciApp = new FibonacciApp();
-
     //FIBONACCI WITHOUT RECURSION
 
     @Test
-    void startWithZeroWithCountOfEight() {
+    void startWithZero_WithCountOfEight() {
         //given
         int startValue = 0;
         int count=8;
         //when
-        ArrayList<Integer> result = fibonacciApp.generateFibonacciSequence(count, startValue);
+        ArrayList<Integer> result = FibonacciApp.generateFibonacciSequence(count, startValue);
         ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(0,1,1,2,3,5,8,13));
         //then
         assertEquals(expected,result);
     }
 
     @Test
-    void startWithZeroWithCountOfFive() {
+    void startWithZero_WithCountOfFive() {
         //given
         int startValue = 0;
         int count=5;
         //when
-        ArrayList<Integer> result = fibonacciApp.generateFibonacciSequence(count, startValue);
+        ArrayList<Integer> result = FibonacciApp.generateFibonacciSequence(count, startValue);
         ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(0,1,1,2,3));
         //then
         assertEquals(expected,result);
     }
 
     @Test
-    void startWithOneWithCountOfEight() {
+    void startWithOne_WithCountOfEight() {
         //given
         int startValue = 1;
         int count=8;
         //when
-        ArrayList<Integer> result = fibonacciApp.generateFibonacciSequence(count, startValue);
+        ArrayList<Integer> result = FibonacciApp.generateFibonacciSequence(count, startValue);
         ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(1,2,3,5,8,13,21,34));
         //then
         assertEquals(expected,result);
     }
 
     @Test
-    void startWithOneWithCountOfFive() {
+    void startWithOne_WithCountOfFive() {
         //given
         int startValue = 1;
         int count=5;
         //when
-        ArrayList<Integer> result = fibonacciApp.generateFibonacciSequence(count, startValue);
+        ArrayList<Integer> result = FibonacciApp.generateFibonacciSequence(count, startValue);
         ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(1,2,3,5,8));
         //then
         assertEquals(expected,result);
@@ -67,7 +61,7 @@ class FibonacciAppTest {
         int startValue = -1;
         int count=8;
         //when
-        ArrayList<Integer> result = fibonacciApp.generateFibonacciSequence(count, startValue);
+        ArrayList<Integer> result = FibonacciApp.generateFibonacciSequence(count, startValue);
         ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(-1,0,-1,-1,-2,-3,-5,-8));
         //then
         assertEquals(expected,result);
@@ -79,25 +73,25 @@ class FibonacciAppTest {
         int startValue = -5;
         int count=8;
         //when
-        ArrayList<Integer> result = fibonacciApp.generateFibonacciSequence(count, startValue);
+        ArrayList<Integer> result = FibonacciApp.generateFibonacciSequence(count, startValue);
         ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(-5,-4,-9,-13,-22,-35,-57,-92));
         //then
         assertEquals(expected,result);
     }
 
     @Test
-    void shouldThrowIllegalArgumentExceptionOnNegativeCount() {
+    void shouldThrowIllegalArgumentException_OnNegativeCount() {
         //given
         int startValue = 1;
         int count=-1;
         //then
         assertThrows(IllegalArgumentException.class,()->{
-            fibonacciApp.generateFibonacciSequence(count, startValue);
+            FibonacciApp.generateFibonacciSequence(count, startValue);
         });
     }
 
     @Test
-    void shouldThrowIllegalArgumentExceptionOnCountLessThanThree() {
+    void shouldThrowIllegalArgumentException_OnCountLessThanThree() {
         //given
         int startValue = 1;
         int count=2;
@@ -108,12 +102,12 @@ class FibonacciAppTest {
     }
 
     @Test
-    void shouldReturnFibonacciSequenceWithCountOfThree() {
+    void shouldReturnFibonacciSequence_WithCountOfThree() {
         //given
         int startValue = 2;
         int count=3;
         //when
-        ArrayList<Integer> result = fibonacciApp.generateFibonacciSequence(count, startValue);
+        ArrayList<Integer> result = FibonacciApp.generateFibonacciSequence(count, startValue);
         ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(2,3,5));
         //then
         assertEquals(expected,result);
@@ -124,32 +118,32 @@ class FibonacciAppTest {
     @Test
     void testIndividualReturnValues(){
         //given
-        assertEquals(0,fibonacciApp.recursiveFibonacci(0));
-        assertEquals(1,fibonacciApp.recursiveFibonacci(1));
-        assertEquals(1,fibonacciApp.recursiveFibonacci(2));
-        assertEquals(2,fibonacciApp.recursiveFibonacci(3));
-        assertEquals(3,fibonacciApp.recursiveFibonacci(4));
-        assertEquals(5,fibonacciApp.recursiveFibonacci(5));
+        assertEquals(0,FibonacciApp.recursiveFibonacci(0));
+        assertEquals(1,FibonacciApp.recursiveFibonacci(1));
+        assertEquals(1,FibonacciApp.recursiveFibonacci(2));
+        assertEquals(2,FibonacciApp.recursiveFibonacci(3));
+        assertEquals(3,FibonacciApp.recursiveFibonacci(4));
+        assertEquals(5,FibonacciApp.recursiveFibonacci(5));
     }
 
 
     @Test
-    void generateForCountOfEight() {
+    void generateSequenceForCountOfEight() {
         //given
         int count=8;
         //when
-        ArrayList<Integer> result = fibonacciApp.generateRecursiveFibonacciSequence(count);
+        ArrayList<Integer> result = FibonacciApp.generateRecursiveFibonacciSequence(count);
         ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(0,1,1,2,3,5,8,13));
         //then
         assertEquals(expected,result);
     }
 
     @Test
-    void generateForCountOfFive() {
+    void generateSequenceForCountOfFive() {
         //given
         int count=5;
         //when
-        ArrayList<Integer> result = fibonacciApp.generateRecursiveFibonacciSequence(count);
+        ArrayList<Integer> result = FibonacciApp.generateRecursiveFibonacciSequence(count);
         ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(0,1,1,2,3));
         //then
         assertEquals(expected,result);
