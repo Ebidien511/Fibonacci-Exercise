@@ -37,7 +37,7 @@ public class FibonacciApp {
             return index;
         }
 
-        return recursiveFibonacci(index-2) + recursiveFibonacci(index-1);
+        return recursiveFibonacci(index-1) + recursiveFibonacci(index-2);
     }
 
     public static ArrayList<Integer> generateRecursiveFibonacciSequence(int count){

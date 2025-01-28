@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -9,6 +10,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class FibonacciAppTest {
 
     FibonacciApp fibonacciApp = new FibonacciApp();
+
+    //FIBONACCI WITHOUT RECURSION
+
     @Test
     void startWithZeroWithCountOfEight() {
         //given
@@ -116,6 +120,18 @@ class FibonacciAppTest {
     }
 
     //RECURSIVE FIBONACCI
+
+    @Test
+    void testIndividualReturnValues(){
+        //given
+        assertEquals(0,fibonacciApp.recursiveFibonacci(0));
+        assertEquals(1,fibonacciApp.recursiveFibonacci(1));
+        assertEquals(1,fibonacciApp.recursiveFibonacci(2));
+        assertEquals(2,fibonacciApp.recursiveFibonacci(3));
+        assertEquals(3,fibonacciApp.recursiveFibonacci(4));
+        assertEquals(5,fibonacciApp.recursiveFibonacci(5));
+    }
+
 
     @Test
     void generateForCountOfEight() {
