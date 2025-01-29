@@ -32,7 +32,7 @@ public class FibonacciApp {
     }
 
     //RECURSIVE FIBONACCI
-    public static int recursiveFibonacci(int index){
+    private static int recursiveFibonacci(int index){ //made private since it is not being called directly. could've also included this method body inside the generateRecursiveFibonacciSequence method
         if(index<=1) {
             return index;
         }
